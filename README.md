@@ -4,7 +4,7 @@ A Minetest Client Side Modding [CSM] demonstration.
 
 ![Inspecting Locked Chest Contents](/screenshot.png?raw=true "Inspecting Locked Chest Contents")
 
-## Motivation
+## The Motivation
 
 This mod was originally created to experiment with the new CSM (or "client side modding") features that have recently landed in Minetest. The original plan was to simply use a client side formspec to display node metadata from locked chests -- a sort of "x-ray" -- and it worked!
 
@@ -21,9 +21,13 @@ Mod creators should know that players now have the ability create (or "re-create
   - `allow_metadata_inventory_put`
   - `allow_metadata_inventory_take`
 
-Additionally, this [pull request](https://github.com/minetest/minetest/pull/5702) to Minetest added the ability to designate metadata as "private" meaning it is not sent to the client automatically. "Hiding stuff from cilent side mods" is noted as a potential use. See `mark_as_private()` in the Class Reference documentation for details.
+For reference, here's the [pull request](https://github.com/minetest-mods/xdecor/pull/78/files) submitted to xdecor that fixed this issue with the mailbox node.
 
-The release of this mod was delayed while makers of the affected mods were contacted about the issue. Happily, all mod projects responded quickly and patches were merged.
+Also of interest, this [pull request](https://github.com/minetest/minetest/pull/5702) to Minetest added the ability to designate metadata as "private" meaning it is not sent to the client automatically. "Hiding stuff from cilent side mods" is noted as a potential use. See `mark_as_private()` in the Class Reference documentation for details.
+
+## The Release
+
+The release of this mod was delayed while makers of the affected mods were contacted about the issue. Happily, each project responded quickly and fixes are merged.
 
 Now that problems are fixed in the affected mods, I am releasing this client mod. I hope that CSM will be a driver of better security practices as all of this was already possible before, but is now more approachable with the addition of the client lua API. Despite FUD slinging by certain people on the forums, client side modding is a great feature and makes for some exciting possibilities. Thanks to the devs of Minetest for this awesome functionality.
 
