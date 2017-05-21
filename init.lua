@@ -49,14 +49,14 @@ local function prepare_formspec()
 
 	if show_player_inventory then
 		formspec = "size[8,9]" ..
-		"list[current_player;main;0,4.85;8,1;]" ..
-		"list[current_player;main;0,6.08;8,3;8]"
+			"list[current_player;main;0,4.85;8,1;]" ..
+			"list[current_player;main;0,6.08;8,3;8]"
 	else
 		formspec = "size[8,4.5]"
 	end
 
 	return formspec .. formspec_style
-	
+
 end
 
 local function inspect_node_meta(params)
