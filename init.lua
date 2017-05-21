@@ -29,7 +29,7 @@ SOFTWARE.
 	This client mod displays node metadata within a formspec.
 
 	Mods that do not implement the following node definitions when calling
-	'register_node()'	may be vulnerable to inventory manipulation:
+	'register_node()' may be vulnerable to inventory manipulation:
 
 	- 'allow_metadata_inventory_move'
 	- 'allow_metadata_inventory_put'
