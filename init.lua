@@ -31,9 +31,9 @@ SOFTWARE.
 	Mods that do not implement the following node definitions when calling
 	'register_node()'	may be vulnerable to inventory manipulation:
 
-		- 'allow_metadata_inventory_move'
-		- 'allow_metadata_inventory_put'
-		- 'allow_metadata_inventory_take'
+	- 'allow_metadata_inventory_move'
+	- 'allow_metadata_inventory_put'
+	- 'allow_metadata_inventory_take'
 
 ]]
 
@@ -44,13 +44,13 @@ local function prepare_formspec()
 
 	local formspec = ""
 	local formspec_style = "bgcolor[#080808BB;true]" ..
-												 "background[5,5;1,1;gui_formbg.png;true]" ..
-												 "listcolors[#00000069;#5A5A5A;#141318;#30434C;#FFF]"
+		"background[5,5;1,1;gui_formbg.png;true]" ..
+		"listcolors[#00000069;#5A5A5A;#141318;#30434C;#FFF]"
 
 	if show_player_inventory then
 		formspec = "size[8,9]" ..
-							 "list[current_player;main;0,4.85;8,1;]" ..
-							 "list[current_player;main;0,6.08;8,3;8]"
+		"list[current_player;main;0,4.85;8,1;]" ..
+		"list[current_player;main;0,6.08;8,3;8]"
 	else
 		formspec = "size[8,4.5]"
 	end
@@ -64,7 +64,8 @@ local function inspect_node_meta(params)
 	core.show_formspec("client_chest_inspector:node",
 		formspec ..
 		"label[0,0;"..params["label"].."]" ..
-		"list[nodemeta:"..params["spos"]..";main;0,0.55;8,4;]")
+		"list[nodemeta:"..params["spos"]..";main;0,0.55;8,4;]"
+	)
 end
 
 local function inspect_xdecor_mailbox_meta(params)
@@ -73,7 +74,8 @@ local function inspect_xdecor_mailbox_meta(params)
 	core.show_formspec("client_chest_inspector:xdecor_mailbox",
 		formspec ..
 		"label[0,0;"..params["label"].."]" ..
-		"list[nodemeta:"..params["spos"]..";mailbox;1,0.55;6,4;]")
+		"list[nodemeta:"..params["spos"]..";mailbox;1,0.55;6,4;]"
+	)
 end
 
 local function label_owner(meta, label)
@@ -82,6 +84,7 @@ local function label_owner(meta, label)
 	elseif meta:get_string("owner") ~= nil then
 		label = label.." (owned by: "..meta:get_string("owner")..")"
 	end
+
 	return label
 end
 
