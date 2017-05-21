@@ -2,6 +2,8 @@
 
 A Minetest Client Side Modding [CSM] demonstration.
 
+![Inspecting Locked Chest Contents](/screenshot.png?raw=true "Inspecting Locked Chest Contents")
+
 ## Motivation
 
 This mod was originally created to experiment with the new CSM (or "client side modding") features that have recently landed in Minetest. The original plan was to simply use a client side formspec to display node metadata from locked chests -- a sort of "x-ray" -- and it worked!

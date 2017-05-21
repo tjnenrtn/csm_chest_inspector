@@ -56,9 +56,11 @@ local function prepare_formspec()
 	end
 
 	return formspec .. formspec_style
+	
 end
 
 local function inspect_node_meta(params)
+
 	local formspec = prepare_formspec()
 
 	core.show_formspec("client_chest_inspector:node",
@@ -66,9 +68,11 @@ local function inspect_node_meta(params)
 		"label[0,0;"..params["label"].."]" ..
 		"list[nodemeta:"..params["spos"]..";main;0,0.55;8,4;]"
 	)
+
 end
 
 local function inspect_xdecor_mailbox_meta(params)
+
 	local formspec = prepare_formspec()
 
 	core.show_formspec("client_chest_inspector:xdecor_mailbox",
@@ -76,9 +80,11 @@ local function inspect_xdecor_mailbox_meta(params)
 		"label[0,0;"..params["label"].."]" ..
 		"list[nodemeta:"..params["spos"]..";mailbox;1,0.55;6,4;]"
 	)
+
 end
 
 local function label_owner(meta, label)
+
 	if meta:get_string("infotext") ~= nil then
 		label = meta:get_string("infotext")
 	elseif meta:get_string("owner") ~= nil then
@@ -86,6 +92,7 @@ local function label_owner(meta, label)
 	end
 
 	return label
+
 end
 
 core.register_on_punchnode(function(pos, node)
