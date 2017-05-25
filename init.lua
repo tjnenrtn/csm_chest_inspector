@@ -62,7 +62,7 @@ local function show_node_inventory(params)
 
 	local formspec = prepare_formspec()
 
-	core.show_formspec("csm_chest_inspector:node",
+	minetest.show_formspec("csm_chest_inspector:node",
 		formspec ..
 		"label[0,0;"..params["label"].."]" ..
 		"list[nodemeta:"..params["spos"]..";main;0,0.55;8,4;]"
@@ -74,7 +74,7 @@ local function show_xdecor_mailbox_inventory(params)
 
 	local formspec = prepare_formspec()
 
-	core.show_formspec("csm_chest_inspector:xdecor_mailbox",
+	minetest.show_formspec("csm_chest_inspector:xdecor_mailbox",
 		formspec ..
 		"label[0,0;"..params["label"].."]" ..
 		"list[nodemeta:"..params["spos"]..";mailbox;1,0.55;6,4;]"
@@ -94,27 +94,27 @@ local function label_owner(meta, label)
 
 end
 
-core.register_on_punchnode(function(pos, node)
+minetest.register_on_punchnode(function(pos, node)
 
-	local spos = pos["x"]..","..pos["y"]..","..pos["z"]
-	local meta = core.get_meta(pos)
+	local meta = minetest.get_meta(pos)
 	local name = node["name"]
+	local spos = pos["x"]..","..pos["y"]..","..pos["z"]
 
 	if name == "default:chest_locked" then
 		-- mod implements allow_metadata_inventory_take
-		core.after(0.15, show_node_inventory, {spos=spos, label=label_owner(meta, "Locked Chest")})
+		minetest.after(0.15, show_node_inventory, {spos=spos, label=label_owner(meta, "Locked Chest")})
 	elseif name == "protector:chest" then
 		-- mod fixed upstream:
 		-- https://github.com/tenplus1/protector/commit/20c6d2b9b95d88cc50aea6541493076f11b2b148
-		core.after(0.15, show_node_inventory, {spos=spos, label="Protector Chest"})
+		minetest.after(0.15, show_node_inventory, {spos=spos, label="Protector Chest"})
 	elseif name == "xdecor:mailbox" then
 		-- mod fixed upstream:
 		-- https://github.com/minetest-mods/xdecor/commit/787ba258d201daec213e8be83e1b8f207410a8a6
-		core.after(0.15, show_xdecor_mailbox_inventory, {spos=spos, label=label_owner(meta, "Mailbox")})
+		minetest.after(0.15, show_xdecor_mailbox_inventory, {spos=spos, label=label_owner(meta, "Mailbox")})
 	elseif name == "inbox:empty" then
 		-- mod fixed upstream:
 		-- https://github.com/bas080/inbox/commit/097aee659386224e15bc498b8f012057ccb136b8
-		core.after(0.15, show_node_inventory, {spos=spos, label=label_owner(meta, "Inbox")})
+		minetest.after(0.15, show_node_inventory, {spos=spos, label=label_owner(meta, "Inbox")})
 	end
 
 	return false
