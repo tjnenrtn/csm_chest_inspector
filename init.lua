@@ -112,7 +112,8 @@ minetest.register_on_punchnode(function(pos, node)
 		-- https://github.com/minetest-mods/xdecor/commit/787ba258d201daec213e8be83e1b8f207410a8a6
 		minetest.after(0.15, show_xdecor_mailbox_inventory, {spos=spos, label=label_owner(meta, "Mailbox")})
 	elseif name == "inbox:empty" then
-		-- mod fixed upstream:
+		-- mods fixed upstream:
+		-- https://github.com/minetest-mods/homedecor_modpack/commit/503c05a09e5bfee32eab86fa2ba23c90f38b6de5
 		-- https://github.com/bas080/inbox/commit/097aee659386224e15bc498b8f012057ccb136b8
 		minetest.after(0.15, show_node_inventory, {spos=spos, label=label_owner(meta, "Inbox")})
 	end

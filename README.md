@@ -15,6 +15,7 @@ Punch the following supported nodes to see their contents:
 - `xdecor:mailbox`
   - from https://github.com/minetest-mods/xdecor
 - `inbox:empty`
+  - from https://github.com/minetest-mods/homedecor_modpack
   - from https://github.com/bas080/inbox
 
 ## Installation
